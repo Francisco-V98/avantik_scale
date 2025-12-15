@@ -59,39 +59,125 @@
     }
 }
 
-.point-card {
+/* Reality Check Section */
+.reality-section {
+    padding: var(--space-4xl) 0;
+    position: relative;
+    background: linear-gradient(to bottom, var(--surface-200) 0%, #0D1131 100%);
+}
+
+.reality-section .section-title {
+    background: linear-gradient(90deg, #FFFFFF, #FF4B4B, #FFFFFF);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: gradient-flow 6s linear infinite;
+    width: fit-content;
+    margin: 0 auto var(--space-xl);
+}
+
+.reality-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+}
+
+/* Unique Tech Shape Card - White Glassmorphism */
+.reality-card {
     background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--border-color);
-    padding: var(--space-lg);
-    border-radius: var(--radius-lg);
-    transition: all 0.3s ease;
+    /* Subtle white tint */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: var(--space-xl);
+    border-radius: 2px 24px 2px 24px;
+    /* Tech/Leaf Shape */
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
-    gap: var(--space-md);
+    /* Left align */
+    text-align: left;
+    transition: all 0.4s ease;
+    position: relative;
+    height: 100%;
+    /* Equal height in grid */
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    /* Subtle depth */
 }
 
-.point-card:hover {
-    background: rgba(255, 255, 255, 0.05);
-    transform: translateY(-4px);
-    border-color: var(--color-primary);
+.reality-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    /* Brighter glass on hover */
+    border-color: #FF4B4B;
+    /* Pain Red */
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -10px rgba(255, 75, 75, 0.15);
 }
 
-.point-icon {
-    font-size: var(--text-2xl);
+/* Accent Corner Line */
+.reality-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: #FF4B4B;
+    transition: width 0.3s ease;
+}
+
+.reality-card:hover::before {
+    width: 100%;
+    /* Line expands on hover */
+}
+
+.quote-icon {
+    color: #FF4B4B;
+    margin-bottom: var(--space-md);
+    font-size: 32px;
     line-height: 1;
+    transition: all 0.3s ease;
+    opacity: 0.9;
 }
 
-.point-text {
-    font-size: var(--text-lg);
-    color: var(--text-primary);
-    /* High contrast for importance */
+.reality-card:hover .quote-icon {
+    transform: scale(1.1);
+    opacity: 1;
+    text-shadow: 0 0 15px rgba(255, 75, 75, 0.6);
+}
+
+.reality-text {
+    font-size: 18px;
+    /* Readable in 4 cols */
     font-weight: 500;
-    margin-bottom: 0;
+    color: var(--color-white);
+    line-height: 1.5;
+    font-style: normal;
+    /* Cleaner than italic for blocks */
+    margin: 0;
+    opacity: 0.9;
 }
 
+/* Responsive Grid */
 @media (min-width: 768px) {
-    .points-grid {
+    .reality-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: var(--space-lg);
+    }
+}
+
+@media (min-width: 1024px) {
+    .reality-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-lg);
+    }
+
+    .reality-text {
+        font-size: 17px;
+        /* Slight adjust for density */
     }
 }
