@@ -1,11 +1,15 @@
 import { SimpleParticles } from './simple-particles.js';
 
-// Initialize Custom Particles
-document.addEventListener('DOMContentLoaded', () => {
-    // Ensure the container exists and replace it with a canvas if needed working with the existing ID
-    const container = document.getElementById('tsparticles');
-    if (container) {
-        // Create canvas element
+// Initialization Logic
+const initApp = () => {
+    console.log('Avantik Scale: Initializing App...');
+
+    // 1. Initialize Particles
+    const particlesContainer = document.getElementById('tsparticles');
+    if (particlesContainer) {
+        // Clear existing canvas if any (hot reload safety)
+        particlesContainer.innerHTML = '';
+
         const canvas = document.createElement('canvas');
         canvas.id = 'particles-canvas';
         canvas.style.position = 'absolute';
@@ -16,40 +20,52 @@ document.addEventListener('DOMContentLoaded', () => {
         canvas.style.zIndex = '1';
         canvas.style.pointerEvents = 'none';
 
-        container.appendChild(canvas);
+        particlesContainer.appendChild(canvas);
 
-        // Initialize
-        new SimpleParticles('particles-canvas');
-        console.log('Custom particles initialized');
+        try {
+            new SimpleParticles('particles-canvas');
+            console.log('Avantik Scale: Particles active.');
+        } catch (e) {
+            console.error('Avantik Scale: Particles failed', e);
+        }
+    } else {
+        console.warn('Avantik Scale: #tsparticles container not found.');
     }
-});
 
-
-console.log('Avantik Scale website loaded');
-
-// Mobile Menu Logic (Placeholder if needed, currently just scroll)
-
-// Scroll Reveal Animation
-const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
+    // 2. Scroll Reveal Animations
+    initScrollReveal();
 };
 
-const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            // observer.unobserve(entry.target); // Keep observing if we want it to trigger again? No, usually once is better.
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
+const initScrollReveal = () => {
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
 
-document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                obs.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
     const sections = document.querySelectorAll('section');
     sections.forEach(section => {
         section.classList.add('reveal');
         observer.observe(section);
     });
-});
+    console.log(`Avantik Scale: Scroll reveal valid for ${sections.length} sections.`);
+};
+
+// Robust Start
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initApp);
+} else {
+    // DOM already ready
+    initApp();
+}
+
+console.log('Avantik Scale: Main module loaded.');
