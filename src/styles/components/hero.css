@@ -64,6 +64,7 @@
     position: relative;
     overflow: hidden;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    z-index: 5;
 }
 
 .video-placeholder::before {
@@ -71,6 +72,8 @@
     position: absolute;
     inset: 0;
     background: radial-gradient(circle at center, rgba(50, 75, 255, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+    /* Allow clicks to pass through */
 }
 
 .play-button {
@@ -159,18 +162,13 @@
 .hero-cta-wrapper {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 }
 
 /* Ensure floating elements allow clicks to pass through to video */
 .floating-elements {
     z-index: 20;
     /* Above video */
-}
-
-.video-placeholder {
-    z-index: 5;
-    position: relative;
 }
 
 .float-card {
