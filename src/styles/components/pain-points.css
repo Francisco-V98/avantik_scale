@@ -1,14 +1,62 @@
-/* Pain Points Section */
-.points-section {
+/* Problems Section */
+.problems-section {
     background-color: var(--surface-100);
+    padding: var(--space-4xl) 0;
     position: relative;
+    overflow: hidden;
+    /* Rich, dynamic background matching Authority Section */
+    background:
+        radial-gradient(circle at 15% 50%, rgba(50, 75, 255, 0.08) 0%, transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(0, 209, 178, 0.08) 0%, transparent 25%),
+        linear-gradient(-90deg, var(--surface-100) 0%, #0B0E14 100%);
 }
 
-.points-grid {
+/* Subtle grid overlay */
+.problems-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.problems-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--space-md);
     margin-top: var(--space-xl);
+    position: relative;
+    z-index: 1;
+}
+
+/* Gradient Title for Problems Section */
+.problems-section .section-title {
+    background: linear-gradient(90deg, #324BFF, #00D1B2, #324BFF);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: gradient-flow 5s linear infinite;
+    display: block;
+    width: fit-content;
+    margin: 0 auto var(--space-sm);
+    text-align: center;
+}
+
+@keyframes gradient-flow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 200% 50%;
+    }
 }
 
 .point-card {
