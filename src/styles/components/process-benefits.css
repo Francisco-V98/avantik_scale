@@ -76,19 +76,307 @@
     .step-number {
         left: 50%;
         transform: translateX(-50%);
+        transition: all 0.3s ease;
+        z-index: 5;
+        /* Ensure strictly above lines */
     }
 
+    /* Base Track Line */
     .step-card::before {
         left: 50%;
         top: 20px;
         bottom: auto;
         width: 100%;
         height: 2px;
-        background: var(--surface-200);
+        background: rgba(255, 255, 255, 0.1);
+        z-index: 1;
     }
 
-    .step-card:last-child::before {
+    /* Active Filling Line */
+    .step-card::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 20px;
+        height: 2px;
+        width: 0%;
+        /* Start empty */
+        background: var(--color-primary);
+        z-index: 2;
+        /* Animation: Fill line */
+    }
+
+    /* No line after last item */
+    .step-card:last-child::before,
+    .step-card:last-child::after {
         display: none;
+    }
+
+    /* --- Synchronized Animation Loop (8s total) --- */
+
+    /* Line Animations - Defined explicitly to reset together */
+    .step-card:nth-child(1)::after {
+        animation: line-fill-1 8s linear infinite;
+    }
+
+    .step-card:nth-child(2)::after {
+        animation: line-fill-2 8s linear infinite;
+    }
+
+    .step-card:nth-child(3)::after {
+        animation: line-fill-3 8s linear infinite;
+    }
+
+    /* Bubble Animations */
+    .step-card:nth-child(1) .step-number {
+        animation: step-active-1 8s linear infinite;
+    }
+
+    .step-card:nth-child(2) .step-number {
+        animation: step-active-2 8s linear infinite;
+    }
+
+    .step-card:nth-child(3) .step-number {
+        animation: step-active-3 8s linear infinite;
+    }
+
+    .step-card:nth-child(4) .step-number {
+        animation: step-active-4 8s linear infinite;
+    }
+
+}
+
+/* --- Keyframes for Perfect Sync --- */
+
+/* Lines */
+@keyframes line-fill-1 {
+    0% {
+        width: 0%;
+    }
+
+    25% {
+        width: 100%;
+    }
+
+    95% {
+        width: 100%;
+        opacity: 1;
+    }
+
+    100% {
+        width: 100%;
+        opacity: 0;
+    }
+}
+
+@keyframes line-fill-2 {
+    0% {
+        width: 0%;
+    }
+
+    25% {
+        width: 0%;
+    }
+
+    50% {
+        width: 100%;
+    }
+
+    95% {
+        width: 100%;
+        opacity: 1;
+    }
+
+    100% {
+        width: 100%;
+        opacity: 0;
+    }
+}
+
+@keyframes line-fill-3 {
+    0% {
+        width: 0%;
+    }
+
+    50% {
+        width: 0%;
+    }
+
+    75% {
+        width: 100%;
+    }
+
+    95% {
+        width: 100%;
+        opacity: 1;
+    }
+
+    100% {
+        width: 100%;
+        opacity: 0;
+    }
+}
+
+/* Steps */
+/* Active state mixer */
+/* @mixin active-step {
+    background: var(--color-primary); 
+    color: white; 
+    border-color: var(--color-primary); 
+    transform: translateX(-50%) scale(1.1); 
+    box-shadow: 0 0 15px var(--color-primary);
+} */
+
+@keyframes step-active-1 {
+    0% {
+        background: var(--color-primary);
+        color: white;
+        border-color: var(--color-primary);
+        transform: translateX(-50%) scale(1.1);
+        box-shadow: 0 0 15px var(--color-primary);
+    }
+
+    /* Starts active */
+    95% {
+        background: var(--color-primary);
+        color: white;
+        border-color: var(--color-primary);
+        transform: translateX(-50%) scale(1.1);
+        box-shadow: 0 0 15px var(--color-primary);
+    }
+
+    100% {
+        background: var(--surface-200);
+        color: var(--color-primary);
+        border-color: var(--color-primary);
+        transform: translateX(-50%) scale(1);
+        box-shadow: none;
+    }
+}
+
+@keyframes step-active-2 {
+    0% {
+        background: var(--surface-200);
+        color: var(--color-primary);
+        border-color: var(--color-primary);
+        transform: translateX(-50%) scale(1);
+        box-shadow: none;
+    }
+
+    24% {
+        background: var(--surface-200);
+        color: var(--color-primary);
+        border-color: var(--color-primary);
+        transform: translateX(-50%) scale(1);
+        box-shadow: none;
+    }
+
+    25% {
+        background: var(--color-primary);
+        color: white;
+        border-color: var(--color-primary);
+        transform: translateX(-50%) scale(1.1);
+        box-shadow: 0 0 15px var(--color-primary);
+    }
+
+    95% {
+        background: var(--color-primary);
+        color: white;
+        border-color: var(--color-primary);
+        transform: translateX(-50%) scale(1.1);
+        box-shadow: 0 0 15px var(--color-primary);
+    }
+
+    100% {
+        background: var(--surface-200);
+        color: var(--color-primary);
+        border-color: var(--color-primary);
+        transform: translateX(-50%) scale(1);
+        box-shadow: none;
+    }
+}
+
+@keyframes step-active-3 {
+    0% {
+        background: var(--surface-200);
+        color: var(--color-primary);
+        border-color: var(--color-primary);
+        transform: translateX(-50%) scale(1);
+        box-shadow: none;
+    }
+
+    49% {
+        background: var(--surface-200);
+        color: var(--color-primary);
+        border-color: var(--color-primary);
+        transform: translateX(-50%) scale(1);
+        box-shadow: none;
+    }
+
+    50% {
+        background: var(--color-primary);
+        color: white;
+        border-color: var(--color-primary);
+        transform: translateX(-50%) scale(1.1);
+        box-shadow: 0 0 15px var(--color-primary);
+    }
+
+    95% {
+        background: var(--color-primary);
+        color: white;
+        border-color: var(--color-primary);
+        transform: translateX(-50%) scale(1.1);
+        box-shadow: 0 0 15px var(--color-primary);
+    }
+
+    100% {
+        background: var(--surface-200);
+        color: var(--color-primary);
+        border-color: var(--color-primary);
+        transform: translateX(-50%) scale(1);
+        box-shadow: none;
+    }
+}
+
+@keyframes step-active-4 {
+    0% {
+        background: var(--surface-200);
+        color: var(--color-primary);
+        border-color: var(--color-primary);
+        transform: translateX(-50%) scale(1);
+        box-shadow: none;
+    }
+
+    74% {
+        background: var(--surface-200);
+        color: var(--color-primary);
+        border-color: var(--color-primary);
+        transform: translateX(-50%) scale(1);
+        box-shadow: none;
+    }
+
+    75% {
+        background: var(--color-primary);
+        color: white;
+        border-color: var(--color-primary);
+        transform: translateX(-50%) scale(1.1);
+        box-shadow: 0 0 15px var(--color-primary);
+    }
+
+    95% {
+        background: var(--color-primary);
+        color: white;
+        border-color: var(--color-primary);
+        transform: translateX(-50%) scale(1.1);
+        box-shadow: 0 0 15px var(--color-primary);
+    }
+
+    100% {
+        background: var(--surface-200);
+        color: var(--color-primary);
+        border-color: var(--color-primary);
+        transform: translateX(-50%) scale(1);
+        box-shadow: none;
     }
 }
 
