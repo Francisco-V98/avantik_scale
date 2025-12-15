@@ -134,28 +134,29 @@
     transform: translate(-50%, -50%);
     width: 300px;
     height: 300px;
-    background: radial-gradient(circle, rgba(50, 75, 255, 0.2) 0%, transparent 70%);
-    filter: blur(50px);
+    background: conic-gradient(from 0deg, #324BFF, #00D1B2, #7c3aed, #324BFF);
+    filter: blur(80px);
     z-index: 0;
+    border-radius: 50%;
+    opacity: 0.4;
+    animation: rotate-glow 10s linear infinite;
 }
 
-.risk-img-placeholder {
-    width: 350px;
-    height: 250px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
+.risk-img {
+    position: relative;
     z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-secondary);
-    font-family: var(--font-heading);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    max-width: 100%;
+    height: auto;
+    width: 450px;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+    transition: transform 0.5s ease;
+    animation: levitate 6s ease-in-out infinite;
+    animation-delay: 3s;
+    /* Offset animation slightly from the other image */
+}
+
+.risk-img:hover {
+    transform: scale(1.02);
 }
 
 /* Authority Section */
