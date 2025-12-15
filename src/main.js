@@ -1,4 +1,3 @@
-import './styles/main.css';
 import { SimpleParticles } from './simple-particles.js';
 
 // Initialize Custom Particles
