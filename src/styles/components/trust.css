@@ -20,94 +20,311 @@
 /* Authority Section */
 .authority-section {
     background-color: var(--surface-100);
+    padding: var(--space-4xl) 0;
+    position: relative;
+    overflow: hidden;
+    /* Rich, dynamic background */
+    background:
+        radial-gradient(circle at 15% 50%, rgba(50, 75, 255, 0.08) 0%, transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(0, 209, 178, 0.08) 0%, transparent 25%),
+        linear-gradient(-90deg, var(--surface-100) 0%, #0B0E14 100%);
+    /* Fade to darker */
 }
 
-.authority-content {
-    padding-right: var(--space-xl);
+/* Add a subtle grid overlay for tech feel */
+.authority-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 0;
 }
 
-.authority-text p {
-    margin-bottom: var(--space-md);
+.authority-grid {
+    display: flex;
+    flex-direction: column-reverse;
+    /* Text first on mobile usually, or image? User said image left, text right. Let's do normal column on mobile (image top) or reverse. Let's do standard flex col, then grid on desktop. */
+    gap: var(--space-2xl);
+    align-items: center;
 }
 
-.authority-close {
-    margin-top: var(--space-xl);
-    font-size: var(--text-2xl);
-    font-family: var(--font-heading);
-    font-weight: 700;
-    line-height: 1.2;
+@media (min-width: 992px) {
+    .authority-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: var(--space-3xl);
+    }
 }
 
-.authority-visual {
+/* Left Column: Image */
+.authority-image-col {
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: var(--space-2xl);
-    background: var(--surface-200);
-    border-radius: var(--radius-lg);
-    border: 1px solid var(--border-color);
+    position: relative;
+    width: 100%;
 }
 
-.partner-badge {
-    text-align: center;
-    font-family: var(--font-heading);
+.image-wrapper {
+    position: relative;
+    display: inline-block;
+    padding: var(--space-lg);
 }
 
-.partner-badge span {
-    display: block;
-    font-size: var(--text-sm);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: #D4AF37;
-    /* Gold */
+.glow-back {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    /* Larger */
+    height: 350px;
+    background: conic-gradient(from 0deg, #324BFF, #00D1B2, #7c3aed, #324BFF);
+    /* Colorful conic gradient */
+    filter: blur(80px);
+    /* Heavy blur for glow effect */
+    z-index: 0;
+    border-radius: 50%;
+    opacity: 0.4;
+    animation: rotate-glow 10s linear infinite;
 }
 
-.partner-badge strong {
-    display: block;
-    font-size: var(--text-5xl);
+@keyframes rotate-glow {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) rotate(180deg) scale(1.1);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg) scale(1);
+    }
+}
+
+.authority-img {
+    position: relative;
+    z-index: 1;
+    max-width: 100%;
+    height: auto;
+    width: 450px;
+    /* Larger image per request implicitly via layout focus */
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+    transition: transform 0.5s ease;
+    animation: levitate 6s ease-in-out infinite;
+}
+
+.authority-img:hover {
+    transform: scale(1.02);
+}
+
+/* Right Column: Content */
+.authority-content-col {
+    width: 100%;
+}
+
+.authority-title {
+    margin-bottom: var(--space-lg);
+    line-height: 1.2;
+    background: linear-gradient(90deg, #324BFF, #00D1B2, #324BFF);
+    /* Dual tone blue-teal loop */
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: gradient-flow 5s linear infinite;
+}
+
+@keyframes levitate {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes gradient-flow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 200% 50%;
+    }
+}
+
+.authority-body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.authority-body p {
+    font-size: var(--text-lg);
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.authority-body strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.authority-highlight {
+    margin-top: var(--space-lg);
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--border-color);
+}
+
+.authority-highlight p {
+    font-size: var(--text-xl);
+    font-weight: 700;
+    line-height: 1.3;
     color: var(--text-primary);
 }
+
+
 
 /* Testimonials Section */
 .testimonials-section {
     background-color: var(--color-dark);
+    overflow: hidden;
+    /* Hide overflow for carousel */
+    padding-bottom: 0 !important;
 }
 
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: 1fr;
+/* Carousel Wrapper */
+.testimonials-carousel-wrapper {
+    width: 100%;
+    position: relative;
+    padding: var(--space-xl) 0;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.testimonials-track {
+    display: flex;
     gap: var(--space-lg);
-    margin-top: var(--space-xl);
+    width: max-content;
+    animation: scroll-horizontal 30s linear infinite;
 }
 
-.testimonial-card {
-    background: var(--surface-200);
-    padding: var(--space-xl);
-    border-radius: var(--radius-md);
-    border: 1px solid var(--border-color);
+.testimonials-track:hover {
+    animation-play-state: paused;
 }
 
-.testimonial-text {
-    font-size: var(--text-lg);
-    font-style: italic;
-    color: var(--text-secondary);
-    margin-bottom: var(--space-lg);
-}
-
-.testimonial-author strong {
-    display: block;
-    color: var(--text-primary);
-}
-
-.testimonial-author span {
-    font-size: var(--text-sm);
-    color: var(--text-tertiary);
-}
-
-@media (min-width: 768px) {
-    .testimonials-grid {
-        grid-template-columns: repeat(2, 1fr);
+@keyframes scroll-horizontal {
+    0% {
+        transform: translateX(0);
     }
+
+    100% {
+        transform: translateX(calc(-50% - var(--space-lg) / 2));
+    }
+
+    /* Adjust based on duplication logic (50% if exact duplicate set is used) */
+}
+
+/* Google Review Card */
+/* Google Review Card */
+.google-review-card {
+    background: rgba(255, 255, 255, 0.03);
+    /* Dark glass */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    /* Slightly more rounded for glass feel */
+    padding: 20px;
+    width: 320px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.google-review-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.google-review-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+}
+
+.review-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: white;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.review-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.review-info strong {
+    color: var(--color-white);
+    /* White for dark glass */
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.stars {
+    color: #FBC02D;
+    /* Google Star Yellow */
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.google-icon {
+    width: 24px;
+    height: 24px;
+    margin-left: auto;
+    /* Push to right */
+    opacity: 0.8;
+}
+
+.review-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-secondary) !important;
+    /* Light grayish-white text */
+    margin-top: 8px;
+    z-index: 2;
+    position: relative;
+    display: block;
+    font-weight: 400;
 }
 
 /* FAQ Section */
@@ -126,16 +343,36 @@
 }
 
 .faq-item {
-    background: var(--color-dark);
+    background: var(--surface-200);
+    /* Slightly lighter than dark for better contrast initially */
     padding: var(--space-lg);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-lg);
+    /* Increased radius for modern look */
     border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.faq-item:hover {
+    background: linear-gradient(145deg, rgba(50, 75, 255, 0.1), rgba(255, 255, 255, 0.05));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-color: rgba(50, 75, 255, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
 }
 
 .faq-item h3 {
     font-size: var(--text-lg);
     color: var(--color-primary);
     margin-bottom: var(--space-sm);
+    transition: color 0.3s ease;
+}
+
+.faq-item:hover h3 {
+    color: var(--color-white);
+    /* Highlight title on hover */
 }
 
 .faq-item p {

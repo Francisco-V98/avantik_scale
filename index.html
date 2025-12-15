@@ -15,7 +15,7 @@
   <header class="header">
     <div class="container header-container">
       <div class="logo">
-        <img src="/images/logo/logo_white.png" alt="Avantik Scale" />
+        <img src="/assets/logo/logo_white.png" alt="Avantik Scale" />
       </div>
       <nav class="nav">
         <ul class="nav-list">
@@ -307,28 +307,32 @@
 
   <!-- Authority Section -->
   <section class="section authority-section">
-    <div class="container grid-2 items-center">
-      <div class="authority-content">
-        <h2 class="section-title" style="text-align: left;">El partner fiscal que sí entiende tu stack digital.</h2>
-        <div class="authority-text">
-          <p>En Avantik llevamos años trabajando con agencias, SaaS y negocios 100% digitales.</p>
-          <p>Sabemos lo que es Notion, ClickUp, Holded, Slack o automatizar procesos.</p>
-          <p>Por eso somos <strong>Partner Gold de Holded</strong>, porque no solo hablamos de digitalización: la
-            vivimos con nuestros clientes cada día.</p>
-          <p>Nuestro equipo combina experiencia contable y fiscal con una mentalidad ágil, estratégica y orientada al
-            crecimiento.</p>
+    <div class="container">
+      <div class="authority-grid">
+        <!-- Left: Image -->
+        <div class="authority-image-col">
+          <div class="image-wrapper">
+            <div class="glow-back"></div>
+            <img src="/assets/elements/gold-holded.png" alt="Avantik Holded Gold Partner" class="authority-img" />
+          </div>
         </div>
-        <p class="authority-close">
-          Aquí no hablamos “en contable”. <br>
-          <span class="text-gradient">Hablamos tu idioma.</span>
-        </p>
-      </div>
-      <div class="authority-visual">
-        <div class="partner-badge">
-          <span>Gold Partner</span>
-          <strong>Holded</strong>
+
+        <!-- Right: Content -->
+        <div class="authority-content-col">
+          <h2 class="section-title authority-title" style="text-align: left;">El partner fiscal que sí entiende tu stack
+            digital.</h2>
+          <div class="authority-body">
+            <p>En Avantik llevamos años trabajando con agencias, SaaS y negocios 100% digitales.</p>
+            <p>Sabemos lo que es Notion, ClickUp, Holded, Slack o automatizar procesos.</p>
+            <p>Por eso somos <strong>Partner Gold de Holded</strong>, porque no solo hablamos de digitalización: la
+              vivimos con nuestros clientes cada día.</p>
+            <p>Nuestro equipo combina experiencia contable y fiscal con una mentalidad ágil, estratégica y orientada al
+              crecimiento.</p>
+            <div class="authority-highlight">
+              <p>Aquí no hablamos “en contable”. <br><span class="text-gradient">Hablamos tu idioma.</span></p>
+            </div>
+          </div>
         </div>
-        <!-- Add more tech stack logos if needed -->
       </div>
     </div>
   </section>
@@ -336,22 +340,93 @@
   <!-- Testimonials Section -->
   <section class="section testimonials-section">
     <div class="container">
-      <h2 class="section-title">⭐ Hemos contribuido al éxito de…</h2>
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <p class="testimonial-text">"Desde que estamos con Avantik, tengo control total sobre mis finanzas. La
-            migración fue transparente."</p>
-          <div class="testimonial-author">
-            <strong>Carlos M.</strong>
-            <span>CEO Agencia Marketing</span>
+      <h2 class="section-title">Hemos contribuido al éxito de…</h2>
+      <div class="testimonials-carousel-wrapper">
+        <div class="testimonials-track">
+          <!-- Item 1 -->
+          <div class="google-review-card">
+            <div class="review-header">
+              <div class="review-avatar" style="background-color: #AB47BC;">CM</div>
+              <div class="review-info">
+                <strong>Carlos M.</strong>
+                <div class="stars">★★★★★</div>
+              </div>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google"
+                class="google-icon" />
+            </div>
+            <p class="review-text">"Desde que estamos con Avantik, tengo control total sobre mis finanzas. La migración
+              fue transparente."</p>
           </div>
-        </div>
-        <div class="testimonial-card">
-          <p class="testimonial-text">"Entienden perfectamente nuestro modelo de negocio digital. Un alivio dejar la
-            burocracia en sus manos."</p>
-          <div class="testimonial-author">
-            <strong>Laura G.</strong>
-            <span>Fundadora SaaS</span>
+          <!-- Item 2 -->
+          <div class="google-review-card">
+            <div class="review-avatar" style="background-color: #EF5350;">LG</div>
+            <div class="review-info">
+              <strong>Laura G.</strong>
+              <div class="stars">★★★★★</div>
+            </div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google"
+              class="google-icon" />
+          </div>
+          <!-- Item 3 -->
+          <div class="google-review-card">
+            <div class="review-avatar" style="background-color: #42A5F5;">PD</div>
+            <div class="review-info">
+              <strong>Pablo D.</strong>
+              <div class="stars">★★★★★</div>
+            </div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google"
+              class="google-icon" />
+          </div>
+          <!-- Item 4 -->
+          <div class="google-review-card">
+            <div class="review-avatar" style="background-color: #66BB6A;">AS</div>
+            <div class="review-info">
+              <strong>Ana S.</strong>
+              <div class="stars">★★★★★</div>
+            </div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google"
+              class="google-icon" />
+          </div>
+          <!-- Duplicate items for infinite scroll effect -->
+          <!-- Item 1 Dup -->
+          <div class="google-review-card">
+            <div class="review-avatar" style="background-color: #AB47BC;">CM</div>
+            <div class="review-info">
+              <strong>Carlos M.</strong>
+              <div class="stars">★★★★★</div>
+            </div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google"
+              class="google-icon" />
+          </div>
+          <!-- Item 2 Dup -->
+          <div class="google-review-card">
+            <div class="review-avatar" style="background-color: #EF5350;">LG</div>
+            <div class="review-info">
+              <strong>Laura G.</strong>
+              <div class="stars">★★★★★</div>
+            </div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google"
+              class="google-icon" />
+          </div>
+          <!-- Item 3 Dup -->
+          <div class="google-review-card">
+            <div class="review-avatar" style="background-color: #42A5F5;">PD</div>
+            <div class="review-info">
+              <strong>Pablo D.</strong>
+              <div class="stars">★★★★★</div>
+            </div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google"
+              class="google-icon" />
+          </div>
+          <!-- Item 4 Dup -->
+          <div class="google-review-card">
+            <div class="review-avatar" style="background-color: #66BB6A;">AS</div>
+            <div class="review-info">
+              <strong>Ana S.</strong>
+              <div class="stars">★★★★★</div>
+            </div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google"
+              class="google-icon" />
           </div>
         </div>
       </div>
@@ -359,36 +434,9 @@
   </section>
 
   <!-- FAQ Section -->
-  <section class="section faq-section">
-    <div class="container">
-      <h2 class="section-title">❓ Preguntas frecuentes (FAQ)</h2>
-      <div class="faq-grid">
-        <div class="faq-item">
-          <h3>¿Qué pasa si ya tengo asesoría?</h3>
-          <p>→ Nos encargamos del traspaso completo. Sin fricciones. <strong>Sin estrés.</strong></p>
-        </div>
-        <div class="faq-item">
-          <h3>¿Usáis Holded?</h3>
-          <p>→ Somos Partner Gold. Si ya lo usas, genial. <strong>Si no, lo implementamos.</strong></p>
-        </div>
-        <div class="faq-item">
-          <h3>¿Cuánto cuesta?</h3>
-          <p>→ Tenemos planes adaptados al tamaño de tu agencia. <strong>Lo vemos en la primera consulta
-              gratuita.</strong></p>
-        </div>
-        <div class="faq-item">
-          <h3>¿Es solo para agencias de marketing?</h3>
-          <p>→ No. También trabajamos con estudios de diseño, consultoras digitales, SaaS, ecommerces y otros negocios
-            tech.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
   <!-- Final CTA Section -->
   <section class="section cta-section" id="contacto">
-    <div class="container" style="margin-bottom: 96px;">
+    <div class="container" style="margin-bottom: 104px;">
       <h2 class="section-title">Preguntas frecuentes (FAQ)</h2>
       <div class="faq-grid">
         <div class="faq-item">
@@ -435,7 +483,7 @@
           </div>
           <div class="cta-visual">
             <div class="cta-logo-glow"></div>
-            <img src="/images/logo/logo_horizont-white.png" alt="Avantik Scale Logo" class="cta-logo" />
+            <img src="/assets/logo/logo_horizont-white.png" alt="Avantik Scale Logo" class="cta-logo" />
           </div>
         </div>
       </div>
