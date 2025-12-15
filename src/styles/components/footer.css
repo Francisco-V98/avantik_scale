@@ -1,0 +1,162 @@
+/* Footer */
+.footer {
+    background-color: #050511;
+    /* Very dark blue/black, distinct from main bg */
+    padding: 80px 0 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 14px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+    margin-bottom: 64px;
+}
+
+@media (min-width: 992px) {
+    .footer-grid {
+        grid-template-columns: 2fr 1fr 1fr 2fr;
+        /* Brand, Links, Links, Newsletter */
+        gap: 64px;
+    }
+}
+
+/* Brand Column */
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 320px;
+}
+
+.footer-logo {
+    width: 200px;
+    height: auto;
+}
+
+.footer-desc {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+/* Links Columns */
+.footer-heading {
+    color: #333642;
+    /* Darker heading as per image? No, image has dark bg, so headings are dark grey? Wait. */
+    /* Looking at image: "Product", "Resources", "Stay up to date" look like dark grey or muted text on dark bg? 
+       Actually, "Product" and "Resources" look very dark, almost barely visible or dark grey. 
+       "Gestoría", "Blog" are white/bright.
+       Let's look closer at the image.
+       "Product" is small, dark grey. "Gestoría" is large white.
+       "Resources" is small, dark grey. "Blog" is large white.
+       "Stay up to date" is small, dark grey.
+    */
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.3);
+    /* Muted */
+    margin-bottom: 16px;
+}
+
+.footer-subheading {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-white);
+    margin-bottom: 24px;
+    display: block;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--color-white);
+}
+
+/* Newsletter Column */
+.newsletter-form {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.newsletter-input {
+    flex: 1;
+    background: var(--color-white);
+    border: none;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 14px;
+    color: var(--text-primary);
+    /* Dark text in white input */
+    outline: none;
+}
+
+.newsletter-input::placeholder {
+    color: #9CA3AF;
+}
+
+.newsletter-btn {
+    background-color: #324BFF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.newsletter-btn:hover {
+    background-color: #2438CC;
+}
+
+/* Bottom Bar */
+.footer-bottom {
+    padding-top: 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    color: var(--text-tertiary);
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.footer-legal-links {
+    display: flex;
+    gap: 24px;
+}
+
+.footer-legal-links a {
+    color: var(--text-tertiary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-legal-links a:hover {
+    color: var(--text-secondary);
+}
