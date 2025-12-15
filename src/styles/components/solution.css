@@ -1,0 +1,102 @@
+/* Solution Section */
+.solution-section {
+    background-color: var(--surface-100);
+}
+
+.solution-intro {
+    text-align: center;
+    font-size: var(--text-xl);
+    max-width: 800px;
+    margin: 0 auto var(--space-2xl);
+    color: var(--text-secondary);
+}
+
+.brand-name {
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+}
+
+.feature-card {
+    background: var(--surface-200);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-primary);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card h3 {
+    color: var(--color-primary);
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-sm);
+}
+
+.feature-card p {
+    color: var(--text-secondary);
+    margin-bottom: 0;
+}
+
+/* Highlight card style */
+.feature-card.highlight {
+    background: linear-gradient(135deg, var(--surface-200) 0%, rgba(50, 75, 255, 0.1) 100%);
+    border-color: rgba(50, 75, 255, 0.3);
+}
+
+@media (min-width: 768px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Make the last odd item span full width or center it */
+    .feature-card:last-child:nth-child(odd) {
+        grid-column: span 2;
+    }
+}
+
+@media (min-width: 1024px) {
+    .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .feature-card:last-child:nth-child(odd) {
+        grid-column: auto;
+        /* Reset */
+        grid-column: span 1;
+    }
+
+    /* Layout specific logic for 5 items: 3 top, 2 bottom centered? 
+     Or just flow. Grid auto flow dense? 
+     Let's keep it simple grid-3. 
+     If 5 items, last row has 2 items left aligned.
+     To center last row items:
+  */
+    .features-grid {
+        justify-content: center;
+        /* Doesn't work for grid items width */
+    }
+
+    /* Specific span for 5 items layout */
+    .features-grid> :nth-child(4),
+    .features-grid> :nth-child(5) {
+        grid-column: span 1;
+        /* Default */
+    }
+
+    /* To center the last two, we can make the parent flex wrap or use empty grid cells.
+     Let's style the last two to be centered by using a wrapper or just let them be.
+     Left aligned is fine for standard.
+  */
+}

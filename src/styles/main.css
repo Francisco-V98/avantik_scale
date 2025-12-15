@@ -1,0 +1,82 @@
+@import './reset.css';
+@import './variables.css';
+@import './typography.css';
+@import './layout.css';
+
+/* Components */
+@import './components/header.css';
+@import './components/hero.css';
+@import './components/pain-points.css';
+@import './components/value-prop.css';
+@import './components/solution.css';
+@import './components/process-benefits.css';
+@import './components/trust.css';
+@import './components/cta.css';
+
+/* Global Styles */
+html {
+    scroll-behavior: smooth;
+}
+
+::selection {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+/* Utilities */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--radius-full);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    font-size: var(--text-base);
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    box-shadow: 0 4px 12px rgba(50, 75, 255, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: #2438CC;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(50, 75, 255, 0.4);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid var(--surface-300);
+    color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--surface-100);
+    border-color: var(--text-secondary);
+}
+
+.container {
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+}
+
+.section {
+    padding: var(--space-3xl) 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+}
+
+.hidden {
+    display: none !important;
+}

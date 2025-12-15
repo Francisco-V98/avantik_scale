@@ -1,0 +1,49 @@
+/* Pain Points Section */
+.points-section {
+    background-color: var(--surface-100);
+    position: relative;
+}
+
+.points-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+    margin-top: var(--space-xl);
+}
+
+.point-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+}
+
+.point-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-4px);
+    border-color: var(--color-primary);
+}
+
+.point-icon {
+    font-size: var(--text-2xl);
+    line-height: 1;
+}
+
+.point-text {
+    font-size: var(--text-lg);
+    color: var(--text-primary);
+    /* High contrast for importance */
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+    .points-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-lg);
+    }
+}

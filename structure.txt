@@ -1,0 +1,121 @@
+1) SECCIÓN HERO / BLOQUE INICIAL
+------------------------------------------------------------
+Titular H1:          Tu agencia ya es digital. [cite_start]Tu asesoría, no. [cite: 2]
+[cite_start]Subtítulo:           Todo lo fiscal, contable y laboral para tu negocio digital. [cite: 3]
+[cite_start]Descripción:         Con visión y herramientas que hablan tu idioma. [cite: 4]
+[cite_start]Elemento visual:     (HUECO PARA VÍDEO VSL) [cite: 4]
+[cite_start]Texto Botón CTA:     Solicita una consulta gratuita [cite: 5]
+[cite_start]Microcopy CTA:       En 30 minutos sabrás si puedes pagar menos impuestos y ganar más visibilidad. [cite: 5]
+
+
+2) SECCIÓN PUNTOS DE DOLOR (EMPATÍA)
+------------------------------------------------------------
+[cite_start]Título H2:           👀 ¿Te suena esto? [cite: 6]
+[cite_start]Frase 1:             “Mi asesor no entiende cómo funciona mi negocio.” [cite: 7]
+[cite_start]Frase 2:             “Pagamos impuestos que podríamos evitar.” [cite: 8]
+[cite_start]Frase 3:             “No veo en tiempo real cómo está mi empresa.” [cite: 9]
+[cite_start]Frase 4:             “Mi asesor es más gestor de papeles que otra cosa.” [cite: 10]
+
+
+3) SECCIÓN TRANSICIÓN / INSIGHT
+------------------------------------------------------------
+[cite_start]Gancho:              💥 Si has pensado alguna de estas frases, estás en el sitio correcto. [cite: 11]
+Insight Principal:   🧠 No necesitas otro asesor. [cite_start]Necesitas una estrategia. [cite: 12]
+Texto cuerpo:        La mayoría de asesorías solo presentan impuestos.
+                     [cite_start]Tú necesitas una que te ayude a escalar, a optimizar fiscalidad y a tomar decisiones con datos. [cite: 13, 14]
+
+
+4) SECCIÓN PROBLEMA (FRENOS)
+------------------------------------------------------------
+[cite_start]Título H2:           ❌ Lo que podría estar frenando tu agencia [cite: 15]
+[cite_start]Punto 1:             🔸 No estás dado de alta en el ROI y pierdes el IVA de tus campañas de Ads [cite: 16]
+[cite_start]Punto 2:             🔸 Estás facturando suplidos como si fueran ingresos y eso afecta tu rentabilidad [cite: 17]
+[cite_start]Punto 3:             🔸 No tienes claro qué gastos puedes deducir realmente [cite: 18]
+[cite_start]Punto 4:             🔸 Tu asesoría y tu negocio digital no van alineados (ni en procesos, ni en visión) [cite: 19]
+
+
+5) SECCIÓN SOLUCIÓN (AVANTIK SCALE)
+------------------------------------------------------------
+[cite_start]Título H2:           ✅ Así es como lo resolvemos [cite: 20]
+[cite_start]Intro:               Presentamos Avantik Scale : [cite: 21]
+[cite_start]Definición:          Una asesoría fiscal, contable y laboral especializada en agencias y negocios digitales. [cite: 22]
+[cite_start]Subtítulo lista:     Incluye: [cite: 23]
+[cite_start]Característica 1:    Optimización fiscal e internacionalización [cite: 24]
+[cite_start]Característica 2:    Contabilidad conectada en tiempo real vía Holded [cite: 25]
+[cite_start]Característica 3:    Portal cliente + reporting visual [cite: 26]
+[cite_start]Característica 4:    Gestión laboral completa [cite: 27]
+[cite_start]Característica 5:    Acompañamiento en el cambio (sin dolor ni burocracia) [cite: 28]
+
+
+6) SECCIÓN PROCESO (CÓMO FUNCIONA)
+------------------------------------------------------------
+[cite_start]Título H2:           🔄 Cómo es el proceso (sin líos, sin estrés) [cite: 29]
+[cite_start]Paso 1 Título:       Paso 1: Análisis gratuito [cite: 30]
+[cite_start]Paso 1 Desc.:        Vemos tu estructura actual y detectamos puntos de mejora. [cite: 30]
+[cite_start]Paso 2 Título:       Paso 2: Transición sin fricciones [cite: 31]
+[cite_start]Paso 2 Desc.:        Nos encargamos del traspaso desde tu asesor actual. [cite: 31]
+[cite_start]Paso 3 Título:       Paso 3: Digitalización total (si aplica) [cite: 32]
+[cite_start]Paso 3 Desc.:        Implantamos Holded, automatizamos y te formamos. [cite: 32]
+[cite_start]Paso 4 Título:       Paso 4: Seguimiento estratégico [cite: 33]
+[cite_start]Paso 4 Desc.:        Nos reunimos contigo regularmente para revisar tus números y optimizar tu negocio. [cite: 33]
+
+
+7) SECCIÓN BENEFICIOS
+------------------------------------------------------------
+[cite_start]Título H2:           🚀 Lo que vas a conseguir [cite: 34]
+[cite_start]Beneficio 1:         Una estructura fiscal optimizada y adaptada a lo que haces hoy [cite: 35]
+[cite_start]Beneficio 2:         Visibilidad total sobre tus números (y en tiempo real) [cite: 36]
+[cite_start]Beneficio 3:         Automatización de procesos contables y laborales [cite: 37]
+[cite_start]Beneficio 4:         Un equipo que te responde rápido, sin tecnicismos [cite: 38]
+[cite_start]Beneficio 5:         Menos estrés, más foco en crecer tu agencia [cite: 39]
+
+
+8) SECCIÓN SIN RIESGO / TRANQUILIDAD
+------------------------------------------------------------
+Título H2:           🛡️ Sin compromiso. [cite_start]Sin fricciones. [cite: 40]
+[cite_start]Texto 1:             No tienes que preocuparte por perder información ni por el cambio. [cite: 41]
+[cite_start]Texto 2:             Nos encargamos de todo el proceso de traspaso. [cite: 42]
+[cite_start]Texto 3:             Tú solo tienes que querer mejorar. [cite: 43]
+
+
+9) SECCIÓN AUTORIDAD / PARTNER
+------------------------------------------------------------
+[cite_start]Título H2:           El partner fiscal que sí entiende tu stack digital. [cite: 44]
+[cite_start]Texto Cuerpo:        En Avantik llevamos años trabajando con agencias, SaaS y negocios 100% digitales. [cite: 45]
+                     [cite_start]Sabemos lo que es Notion, ClickUp, Holded, Slack o automatizar procesos. [cite: 46]
+                     [cite_start]Por eso somos Partner Gold de Holded, porque no solo hablamos de digitalización: la vivimos con nuestros clientes cada día. [cite: 47]
+                     [cite_start]Nuestro equipo combina experiencia contable y fiscal con una mentalidad ágil, estratégica y orientada al crecimiento. [cite: 48]
+Cierre Sección:      Aquí no hablamos “en contable”. [cite_start]Hablamos tu idioma. [cite: 49]
+[cite_start]Visual Ref:          (Imagen logo Asesoría Partner Gold Holded) [cite: 50]
+
+
+10) SECCIÓN PRUEBA SOCIAL / TESTIMONIOS
+------------------------------------------------------------
+[cite_start]Título H2:           ⭐ Hemos contribuido al éxito de… [cite: 51]
+[cite_start]Nota Interna:        💬 Próximamente incluiremos aquí testimonios reales de fundadores de agencias. [cite: 52]
+[cite_start]Acción:              Mientras tanto, coloquemos las reseñas actuales. [cite: 53]
+
+
+11) SECCIÓN FAQ (PREGUNTAS FRECUENTES)
+------------------------------------------------------------
+[cite_start]Título H2:           ❓ Preguntas frecuentes (FAQ) [cite: 54]
+
+Pregunta 1:          ¿Qué pasa si ya tengo asesoría?
+Respuesta 1:         → Nos encargamos del traspaso completo. Sin fricciones. [cite_start]Sin estrés. [cite: 55]
+
+Pregunta 2:          ¿Usáis Holded?
+Respuesta 2:         → Somos Partner Gold. Si ya lo usas, genial. [cite_start]Si no, lo implementamos. [cite: 56]
+
+Pregunta 3:          ¿Cuánto cuesta?
+Respuesta 3:         → Tenemos planes adaptados al tamaño de tu agencia. [cite_start]Lo vemos en la primera consulta gratuita. [cite: 57]
+
+Pregunta 4:          ¿Es solo para agencias de marketing?
+[cite_start]Respuesta 4:         → No. También trabajamos con estudios de diseño, consultoras digitales, SaaS, ecommerces y otros negocios tech. [cite: 58]
+
+
+12) SECCIÓN CTA FINAL
+------------------------------------------------------------
+[cite_start]Pretítulo:           🟢 CTA FINAL [cite: 59]
+[cite_start]Título H2:           Solicita ahora tu análisis gratuito [cite: 60]
+[cite_start]Subtítulo:           En 30 días puedes tener una asesoría que entiende tu negocio digital. [cite: 61]
+[cite_start]Texto Botón:         Quiero una asesoría que hable mi idioma [cite: 62]

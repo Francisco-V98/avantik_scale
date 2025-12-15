@@ -1,0 +1,52 @@
+/* Header Component */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: rgba(13, 17, 49, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--header-height);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    /* Adjust as needed */
+    width: auto;
+}
+
+.nav-list {
+    display: none;
+    /* Mobile first hidden, show on desktop */
+}
+
+@media (min-width: 768px) {
+    .nav-list {
+        display: flex;
+        gap: var(--space-xl);
+    }
+
+    .nav-list a {
+        color: var(--text-secondary);
+        font-weight: 500;
+        transition: color 0.3s ease;
+        font-size: var(--text-sm);
+    }
+
+    .nav-list a:hover {
+        color: var(--text-primary);
+    }
+}

@@ -1,0 +1,87 @@
+/* Liquid Glass & Floating Effects */
+
+/* Glassmorphism Utilities */
+.liquid-glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    border-radius: var(--radius-lg);
+    color: var(--text-primary);
+}
+
+.liquid-glass.high-contrast {
+    background: rgba(13, 17, 49, 0.6);
+    /* Darker glass */
+    border-color: rgba(50, 75, 255, 0.2);
+}
+
+.liquid-glass.accent {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Floating Animation Keyframes */
+@keyframes float-y-slow {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes float-y-medium {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes float-y-fast {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Utilities for assigning animations */
+.float-slow {
+    animation: float-y-slow 6s ease-in-out infinite;
+}
+
+.float-medium {
+    animation: float-y-medium 4s ease-in-out infinite;
+}
+
+.float-fast {
+    animation: float-y-fast 3s ease-in-out infinite;
+}
+
+/* Stagger delays */
+.delay-1 {
+    animation-delay: 0s;
+}
+
+.delay-2 {
+    animation-delay: 1.5s;
+}
+
+.delay-3 {
+    animation-delay: 3s;
+}

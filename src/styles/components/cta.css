@@ -1,0 +1,220 @@
+/* Final CTA Section */
+.cta-section {
+    background: var(--color-dark);
+    padding: var(--space-4xl) 0;
+    position: relative;
+    overflow: hidden;
+    /* Removed static gradient before pseudos */
+}
+
+/* Animated Background Container */
+.cta-background {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Blobs */
+/* Blobs */
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    /* Increased blur for smoother gradient */
+    opacity: 0.5;
+    animation: blob-bounce 10s infinite ease-in-out alternate;
+}
+
+.blob-1 {
+    width: 600px;
+    height: 600px;
+    background: #0e24ca;
+    /* Primary */
+    top: 35%;
+    left: -10%;
+    animation-duration: 15s;
+}
+
+.blob-2 {
+    width: 500px;
+    height: 500px;
+    background: #00D1B2;
+    /* Cyan/Teal */
+    bottom: -10%;
+    right: -10%;
+    animation-duration: 18s;
+    animation-direction: alternate-reverse;
+}
+
+.blob-3 {
+    width: 400px;
+    height: 400px;
+    background: #7c3aed;
+    /* Purple */
+    top: 80%;
+    left: 35%;
+    animation-name: blob-move-center;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes blob-bounce {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(50px, 50px) scale(1.1);
+    }
+}
+
+@keyframes blob-move-center {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    }
+
+    33% {
+        transform: translate(-30%, -60%) rotate(120deg) scale(1.2);
+    }
+
+    66% {
+        transform: translate(-70%, -40%) rotate(240deg) scale(0.9);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg) scale(1);
+    }
+}
+
+/* Container */
+.cta-container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Glass Card */
+.cta-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 40px;
+    /* Highly rounded */
+    padding: var(--space-2xl);
+    /* Inner padding */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Wrapper inside Card */
+.cta-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xl);
+    align-items: center;
+}
+
+/* Visual Side (Logo) */
+.cta-visual {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cta-logo {
+    width: 100%;
+    height: auto;
+    max-width: 320px;
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 0 20px rgba(50, 75, 255, 0.3));
+    transition: transform 0.3s ease;
+}
+
+.cta-logo:hover {
+    transform: scale(1.05);
+}
+
+.cta-logo-glow {
+    position: absolute;
+    inset: -20px;
+    background: radial-gradient(circle at center, rgba(50, 75, 255, 0.2), transparent 70%);
+    filter: blur(40px);
+    z-index: 1;
+    border-radius: 50%;
+}
+
+/* Content Side */
+.cta-content {
+    text-align: center;
+    max-width: 600px;
+}
+
+.cta-pretitle {
+    color: #00D1B2;
+    font-weight: 600;
+    margin-bottom: var(--space-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: var(--text-sm);
+}
+
+.cta-title {
+    font-size: var(--text-4xl);
+    margin-bottom: var(--space-lg);
+    color: var(--text-primary);
+    line-height: 1.1;
+}
+
+.cta-subtitle {
+    font-size: var(--text-lg);
+    color: var(--text-secondary);
+    margin: 0 auto var(--space-xl);
+}
+
+@media (min-width: 992px) {
+    .cta-card {
+        padding: var(--space-4xl);
+    }
+
+    .cta-wrapper {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        /* Text Left (larger), Logo Right */
+        gap: var(--space-4xl);
+        align-items: center;
+        text-align: left;
+    }
+
+    .cta-content {
+        text-align: left;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .cta-subtitle {
+        margin: 0 0 var(--space-xl) 0;
+    }
+
+    .cta-visual {
+        justify-content: flex-end;
+    }
+
+    .cta-title {
+        font-size: var(--text-5xl);
+    }
+}
+
+/* Footer (Basic override if needed) */
+.footer {
+    background-color: var(--surface-base);
+    border-top: 1px solid var(--border-color);
+    padding: var(--space-lg) 0;
+}
